@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+:root {
+  --violet: #492b7c;
+  --violetD: #301551;
+  --orange: #ed8a0a;
+  --orangeL: #f6d912;
+  --cream: #fff29c;
+  --white: #ffffff;
+}
+
+main {
+  display: flex;
+}
+
+.main-index {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex: 6;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard {
+  flex: 6;
+}
+
+.menu-title {
+  color: var(--violetD);
+  padding-bottom: 0.5rem;
+}
+
+.menu-list {
+  padding-left: 0.5rem;
+}
+
+.side-menu {
+  flex: 1;
+  background-color: var(--orangeL);
+  padding: 1rem;
+  border-right: 2px solid var(--orange);
+
+}
+
+.container {
+  padding: 0 5%;
+}
+
+header {
+  color: var(--white);
+  background-color: var(--violetD);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  border-bottom: 2px solid var(--orange);
+}
+
+.list {
+  display: flex;
+}
+
+.link-item {
+  color: var(--white);
+  text-decoration: none;
+  margin: 1rem;
+  font-size: 20px;
+}
+
+.login {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 5px var(--violetD);
+  text-align: center;
+}
+
+.input {
+  margin: 0 0 1rem 0;
+  height: 2rem;
+  width: 50%;
+  border-radius: 2px;
+  border: 1px solid;
+}
+
+.btn {
+  background-color: var(--orange);
+  height: 2rem;
+  width: 30%;
+  border: 0px;
+  border-radius: 5px;
+}
+
+.search-bar {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.search-btn {
+  margin-left: -5px;
+  width: 3rem;
+}
+
+.info-head, .info-body {
+  display: flex;
+  justify-content: center;
+  background-color: var(--violet);
+  align-items: center;
+
+}
+
+.info-head {
+  height: 2rem;
+  color: var(--orange);
+  
+}
+
+.info-detail {
+  font-size: 1rem;
+  font-weight: bolder;
+  margin: 0 3rem;
+  flex: 1;
+
+}
+
+.info-body {
+  background-color: var(--orangeL);
+  height: 1.5rem;
+  border-bottom: 1px solid var(--violet);
+}
+
+.info-body .info-detail {
+  color: var(--violetD);
+  font-weight: normal;
+  flex: 1;
+  background-color: var(--orangeL);
+}
