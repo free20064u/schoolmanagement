@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.contrib.auth.models import User
 from .models import Program, Student
 
@@ -15,3 +15,11 @@ def student(request):
   }
 
   return render(request, 'course/student.html', context)
+
+
+def student_details(request, id=None):
+  student = get_object_or_404(User, id=id)
+  context = {
+    'student': student,
+  }
+  return render(request, 'course/student_details.html', context)

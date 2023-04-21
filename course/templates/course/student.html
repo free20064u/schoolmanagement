@@ -17,12 +17,14 @@
     </p>
 
     {% for user in users %}
-    <p class="info-body">
-      <span class="info-detail">{{ user.first_name }}</span>
-      <span class="info-detail">{{user.last_name}}</span>
-      <span class="info-detail">{{ user.student.indexNo }}</span>
-      <span class="info-detail">{{user.student.program.programName}}</span>
-    </p>
+    <a href="{% url 'student_details' user.id %}">
+      <p class="info-body">
+        <span class="info-detail">{{ user.first_name }}</span>
+        <span class="info-detail">{{user.last_name}}</span>
+        <span class="info-detail">{{ user.student.indexNo }}</span>
+        <span class="info-detail">{{user.student.program.programName}}</span>
+      </p>
+    </a>
     {% endfor %}
   </section>
 </div>

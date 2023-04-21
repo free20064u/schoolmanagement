@@ -1,0 +1,31 @@
+{% extends './base.html' %}
+
+{% block content %}
+  <div class="dashboard container">
+    <div class="student-info">
+      <h1 class="details-title">Student details</h1>
+      <img src="{{ student.student.image}}" alt="" class="stuendent-image">
+      <div>
+        <p><span class="info-label">First name:</span><span class="info-value">{{student.first_name}}</span></p>
+        <p><span class="info-label">Last name:</span><span class="info-value">{{student.last_name }}</span></p>
+        <p><span class="info-label">Username:</span><span class="info-value">{{ student.username }}</span></p>
+      </div>
+      <div>
+        <p><span class="info-label">Course: </span><span class="info-value">{{ student.student.program }}</span></p>
+        <p><span class="info-label">Course: </span><span class="info-value">{{ student.student.program }}</span></p>
+        <p><span class="info-label">Email: </span><span class="info-value">{{ student.email }}</span></p>
+      </div>
+      <div>
+        <p><span class="info-label">Fees: </span><span class="info-value">{{ student.student.program.fees }}</span></p>
+        <p><span class="info-label">Paid:</span><span class="info-value">{{ student.student.paid }}</span></p>
+        <p><span class="info-label">Balance: </span><span class="info-value">{{ student.student.bal }}</span></p>
+      </div>
+      <div class="student-btn">
+        <button class="btn btn-detail">edit</button>
+        <button class="btn btn-detail">delete</button>
+        <button class="btn btn-detail">back</button>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+  
