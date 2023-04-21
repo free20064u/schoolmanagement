@@ -1,0 +1,10 @@
+{% extends './base.html' %}
+
+{% block content %}
+  <div class="dashboard container">
+    <form action="" class="student-form">
+      {% csrf_token %}
+      {{ studentForm.as_p }}
+    </form>
+  </div>
+{% endblock content %}

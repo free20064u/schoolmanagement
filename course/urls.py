@@ -17,10 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .views import index, student, student_details
+from .views import add_student, index, student, student_details
 
 urlpatterns = [
     path('', index, name='index'),
     path('student/', student, name='student' ),
-    path('student_details/<int:id>/', student_details, name='student_details')
+    path('student_details/<int:id>/', student_details, name='student_details'),
+    path('add_student/', add_student, name='add_student'),
     ]

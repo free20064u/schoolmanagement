@@ -87,7 +87,7 @@ header {
   text-align: center;
 }
 
-.input {
+.input, .student-form p input {
   margin: 0 0 1rem 0;
   height: 2rem;
   width: 50%;
@@ -159,6 +159,10 @@ header {
   text-align: center;
 }
 
+.student-info {
+  margin-top: 1.5rem;
+}
+
 .student-info div {
   display: flex;
   padding: 0.2rem .2rem 0px 1rem;
@@ -191,3 +195,8 @@ header {
   justify-content: space-between;
 }
 
+.student-form p label{
+  display: inline-block;
+  width: 5rem;
+
+}
