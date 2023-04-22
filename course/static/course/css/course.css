@@ -87,7 +87,7 @@ header {
   text-align: center;
 }
 
-.input, .student-form p input {
+.input, .student-form p input, .student-form p select {
   margin: 0 0 1rem 0;
   height: 2rem;
   width: 50%;
@@ -197,6 +197,13 @@ header {
 
 .student-form p label{
   display: inline-block;
-  width: 5rem;
-
+  width: 10rem;
+  background-color: var(--orange);
+  height: 2rem;
+  padding: .2rem;
 }
+
+.student-form p span {
+  display: none;
+}
+

@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404, render
+from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import User
 from .forms import StudentForm
 from .models import Program, CustomUser
@@ -29,9 +30,12 @@ def student_details(request, id=None):
 def add_student(request):
 
   context = {}
-  studentForm = StudentForm(request.POST or None, request.FILES or None)
+  studentForm = StudentForm(request.POST or None)
   if studentForm.is_valid():
+    print('hi')
     studentForm.save()
+  else:
+    print('not saved')
 
 
   context['studentForm'] = studentForm

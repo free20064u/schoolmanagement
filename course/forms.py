@@ -1,8 +1,10 @@
-from django import forms
+
+from .models import CustomUser
+from django.contrib.auth.forms import UserCreationForm
 
 
-class StudentForm(forms.ModelForm):
+class StudentForm(UserCreationForm):
     class Meta:
-        model = ''
-        fields = '__all__'
+        model = CustomUser
+        fields = ['image','first_name', 'last_name', 'username', 'email', 'program', 'is_student', 'paid']
         
