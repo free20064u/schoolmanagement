@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+
 from . import views
 
 urlpatterns = [
@@ -32,4 +33,4 @@ urlpatterns = [
     path('logout-user', views.logout_user, name='logout_user'),
     path('register/', views.register, name='register'),
     path('dashboard/', views.dashboard, name='dashboard'),
-    ]
+    ] 

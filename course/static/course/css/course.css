@@ -233,6 +233,14 @@ header {
 
 }
 
+.student-image {
+  margin: 1rem auto;
+  width: 10rem;
+  height: 10rem;
+  position: relative;
+  left: 42%;
+}
+
 .search input {
   width: 30%;
 }

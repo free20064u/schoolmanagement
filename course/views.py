@@ -69,7 +69,7 @@ def add_student(request):
   context = {}
   studentForm = StudentForm()
   if request.method == 'POST':
-    studentForm = StudentForm(request.POST or None)
+    studentForm = StudentForm(request.POST , request.FILES)
     if studentForm.is_valid():
       studentForm.save()
       studentForm = StudentForm()
@@ -95,7 +95,7 @@ def edit_student(request, pk=None):
   studenForm = StudentForm(instance=student)
 
   if request.method == "POST": 
-    studentForm = StudentForm(request.POST, instance=student)
+    studentForm = StudentForm(request.POST,request.FILES,  instance=student)
     if studentForm.is_valid():              
       studentForm.save()
       messages.success(request, 'Student iformation updated.')
