@@ -1,0 +1,31 @@
+{% extends './base.html' %}
+
+{% block content %}
+<div class="dashboard container">
+  <section class="search-bar">
+    <h1 style="margin-bottom: 1rem">Programs</h1>
+    <form action="" class="search" method="post">
+      {% csrf_token %}
+      {{ programForm }}
+      <button type="submit" class="btn search-btn"><i class="fa-solid fa-location-arrow"></i></button>
+    </form>
+  </section>
+  <section class="info">
+    <p class="info-head">
+      <span class="info-detail">S/N</span>
+      <span class="info-detail">Program</span>
+      <span class="info-detail">Fees</span>
+    </p>
+
+    {% for program in programs %}
+    <a href="{% url 'edit_program' program.id %}">
+      <p class="info-body">
+        <span class="info-detail">{{ program.id }}</span>
+        <span class="info-detail">{{ program.programName }}</span>
+        <span class="info-detail">{{ program.fees }}</span>
+      </p>
+    </a>
+    {% endfor %}
+  </section>
+</div>
+{% endblock content %}

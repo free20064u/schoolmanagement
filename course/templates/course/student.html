@@ -3,7 +3,7 @@
 {% block content %}
 <div class="dashboard container">
   <section class="search-bar">
-    <form action="" class="search">
+    <form action="{% url 'search_student' %}" method="post" class="search">
       <input type="text" name="name" id="" class="input search-input" placeholder="Enter student name">
       <button type="submit" class="btn search-btn"><i class="fa-solid fa-search"></i></button>
     </form>

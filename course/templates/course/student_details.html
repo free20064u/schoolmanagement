@@ -21,9 +21,9 @@
         <p><span class="info-label">Balance: </span><span class="info-value">{{ student.bal }}</span></p>
       </div>
       <div class="student-btn">
-        <button class="btn btn-detail">edit</button>
-        <button class="btn btn-detail">delete</button>
-        <button class="btn btn-detail">back</button>
+        <a href="{% url 'edit_student' student.id %}"><button class="btn btn-detail">edit</button></a>
+        <a href="{% url 'delete_student' student.id %}"><button class="btn btn-detail">delete</button></a>
+        <a href="{% url 'student' %}"><button class="btn btn-detail">Back</button></a>
       </div>
     </div>
   </div>

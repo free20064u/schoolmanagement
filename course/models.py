@@ -1,11 +1,11 @@
 from django.contrib.auth.models import User, AbstractUser
 from django.db import models
-
+from django.utils.text import slugify
 
 # Create your models here.
 class Program(models.Model):
-    programName = models.CharField(max_length=255,null=True, blank=True, default='')
-    fees = models.IntegerField(null=True, blank=True)
+    programName = models.CharField(max_length=255)
+    fees = models.IntegerField()
 
     def __str__(self):
         return self.programName
@@ -13,15 +13,19 @@ class Program(models.Model):
 
 class CustomUser(AbstractUser):
     program = models.ForeignKey(Program,on_delete=models.CASCADE, blank=True, null=True)
-    indexNo = models.IntegerField(blank=True, null=True)
-    image = models.ImageField(upload_to='media', blank=True, default='')
-    is_student = models.BooleanField(default=False)
-    paid = models.IntegerField(blank=True, null=True, default=0)
+    indexNo = models.IntegerField(default=000000, null=True)
+    image = models.ImageField(upload_to='media', blank=True, default='', null=True)
+    is_student = models.BooleanField(default=True, null=True)
+    paid = models.IntegerField(blank=True, default=0, null=True)
+    slug = models.SlugField(blank=True, default='')
 
     def bal(self):
         balance = self.program.fees - self.paid
         return balance 
 
+    def save(self, *args , **kwargs):
+        self.slug = slugify(str(self.indexNo) + self.first_name)
+        super(CustomUser, self).save()
     
 
   

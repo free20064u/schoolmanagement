@@ -1,0 +1,14 @@
+{% extends './base.html' %}
+
+
+{% block content %}
+<div class="dashboard container">
+  <h1 class="details-title">Registration</h1>
+  <form action="" method="post" class="student-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="is_student" value="0">
+    <button type="submit" class="btn student-form-btn">Submit</button>
+  </form>
+</div>
+{% endblock content %}

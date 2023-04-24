@@ -6,7 +6,7 @@
     <form action="" method="post" class="student-form">
       {% csrf_token %}
       {{ studentForm.as_p }}
-      <button type="submit">Submit</button>
+      <button type="submit" class="btn student-form-btn">Submit</button>
     </form>
   </div>
 {% endblock content %}

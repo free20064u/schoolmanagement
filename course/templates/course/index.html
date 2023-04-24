@@ -2,7 +2,8 @@
 
 {% block  content %}
   <div class="main-index">
-    <form action="" class='login'>
+    <form action="" method="post" class='login'>
+      {% csrf_token %}
       <input type="text" class="input" name="username" id="username" placeholder="Username"><br>
       <input type="password" class="input" name="password" id="password" placeholder="Password"><br>
       <button class="btn">Submit</button>

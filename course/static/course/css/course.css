@@ -87,7 +87,7 @@ header {
   text-align: center;
 }
 
-.input, .student-form p input, .student-form p select {
+.input, .student-form p input, .student-form p select , .search input{
   margin: 0 0 1rem 0;
   height: 2rem;
   width: 50%;
@@ -118,6 +118,10 @@ header {
   color: var(--violet);
   margin-top: 2rem;
   width: 10rem;
+}
+
+.btn-detail:hover {
+  background-color: var(--cream);
 }
 
 .info-head, .info-body {
@@ -207,3 +211,56 @@ header {
   display: none;
 }
 
+.student-form ul {
+  display: none;
+}
+
+.student-form p {
+  text-align: center;
+}
+
+.student-form {
+  margin: 1rem 0;
+}
+
+.student-form-btn {
+  width: 20%;
+  margin: 0 auto;
+  position: relative;
+  left: 40%;
+  color: var(--white);
+  background-color: var(--violetD);
+
+}
+
+.search input {
+  width: 30%;
+}
+
+.success {
+  background-color: rgb(179, 212, 231);
+  color: blue;
+  padding: .5rem;
+}
+
+.error {
+  background-color: rgb(243, 153, 153);
+  color: red;
+  padding: .5rem;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1rem;
+}
+
+.card {
+  width: 10rem;
+  background-color: var(--orange);
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
