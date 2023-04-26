@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User, AbstractUser
 from django.db import models
 from django.utils.text import slugify
+from imagekit.models import ImageSpecField
+from pilkit.processors import ResizeToFill
 
 # Create your models here.
 class Program(models.Model):
@@ -19,6 +21,10 @@ class CustomUser(AbstractUser):
     paid = models.IntegerField(blank=True, default=0, null=True)
     slug = models.SlugField(blank=True, default='')
 
+    image_thumbnail = ImageSpecField(source='image',
+                                     processors=[ResizeToFill(200, 200)],
+                                     format='JPEG',
+                                     options={'quality': 60})
     def bal(self):
         balance = self.program.fees - self.paid
         return balance 
@@ -27,7 +33,5 @@ class CustomUser(AbstractUser):
         self.slug = slugify(str(self.indexNo) + self.first_name)
         super(CustomUser, self).save()
     
-
-  
 
 

@@ -1,0 +1,35 @@
+{% extends './base.html' %}
+
+
+{% block content %}
+<div class="dashboard container">
+  <div class="student-info">
+    <h1 class="details-title">Student details</h1>
+    <hr>
+    <img src="{{ user.image_thumbnail.url }}" alt="thumbnail" class="student-image">
+    <div>
+      <p><span class="info-label">First name:</span><span class="info-value">{{user.first_name}}</span></p>
+      <p><span class="info-label">Last name:</span><span class="info-value">{{user.last_name }}</span></p>
+      <p><span class="info-label">Username:</span><span class="info-value">{{ user.username }}</span></p>
+    </div>
+    <div>
+      <p><span class="info-label">Course: </span><span class="info-value">{{ user.program }}</span></p>
+      <p><span class="info-label">Course: </span><span class="info-value">{{ user.program }}</span></p>
+      <p><span class="info-label">Email: </span><span class="info-value">{{ user.email }}</span></p>
+    </div>
+    <div>
+      <p><span class="info-label">Fees: </span><span class="info-value">{{ user.program.fees }}</span></p>
+      <p><span class="info-label">Paid:</span><span class="info-value">{{ user.paid }}</span></p>
+      <p><span class="info-label">Balance: </span><span class="info-value">{{ user }}</span></p>
+    </div>
+    <div class="student-btn">
+      <a href="{% url 'users' %}"><button class="btn btn-detail">edit</button></a>
+      <a href="{% url 'users' %}"><button class="btn btn-detail">delete</button></a>
+      <a href="{% url 'users' %}"><button class="btn btn-detail">Back</button></a>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+
+

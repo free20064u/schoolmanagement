@@ -46,7 +46,6 @@ main {
   background-color: var(--orangeL);
   padding: 1rem;
   border-right: 2px solid var(--orange);
-
 }
 
 .container {
@@ -87,7 +86,10 @@ header {
   text-align: center;
 }
 
-.input, .student-form p input, .student-form p select , .search input{
+.input,
+.student-form p input,
+.student-form p select,
+.search input {
   margin: 0 0 1rem 0;
   height: 2rem;
   width: 50%;
@@ -124,18 +126,17 @@ header {
   background-color: var(--cream);
 }
 
-.info-head, .info-body {
+.info-head,
+.info-body {
   display: flex;
   justify-content: center;
   background-color: var(--violet);
   align-items: center;
-
 }
 
 .info-head {
   height: 2rem;
   color: var(--orange);
-  
 }
 
 .info-detail {
@@ -143,7 +144,6 @@ header {
   font-weight: bolder;
   margin: 0 3rem;
   flex: 1;
-
 }
 
 .info-body {
@@ -169,7 +169,7 @@ header {
 
 .student-info div {
   display: flex;
-  padding: 0.2rem .2rem 0px 1rem;
+  padding: 0.2rem 0.2rem 0px 1rem;
   gap: 1rem;
 }
 
@@ -199,12 +199,12 @@ header {
   justify-content: space-between;
 }
 
-.student-form p label{
+.student-form p label {
   display: inline-block;
   width: 10rem;
   background-color: var(--orange);
   height: 2rem;
-  padding: .2rem;
+  padding: 0.2rem;
 }
 
 .student-form p span {
@@ -230,15 +230,12 @@ header {
   left: 40%;
   color: var(--white);
   background-color: var(--violetD);
-
 }
 
 .student-image {
   margin: 1rem auto;
-  width: 10rem;
-  height: 10rem;
   position: relative;
-  left: 42%;
+  left: 40.5%;
 }
 
 .search input {
@@ -248,13 +245,13 @@ header {
 .success {
   background-color: rgb(179, 212, 231);
   color: blue;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .error {
   background-color: rgb(243, 153, 153);
   color: red;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .cards {
@@ -271,4 +268,8 @@ header {
   align-items: center;
   justify-content: center;
   border-radius: 5px;
+}
+
+#image-clear_id {
+  display: none;
 }

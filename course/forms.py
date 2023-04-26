@@ -8,6 +8,9 @@ class StudentForm(forms.ModelForm):
     class Meta:
         model = CustomUser
         fields = ['image','first_name', 'last_name', 'username','indexNo', 'email', 'program', 'paid']
+        widgets = {
+            'image': forms.FileInput(attrs={'class': 'image-field'})
+        }
         
 
 class ProgramForm(forms.ModelForm): 
@@ -23,3 +26,8 @@ class RegisterForm(UserCreationForm):
         widgets = {
             'is_student':forms.HiddenInput(attrs={'value':'0'})
         }
+
+class AdminForm(forms.ModelForm):
+    class Meta:
+        model = CustomUser
+        fields = '__all__'

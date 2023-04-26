@@ -8,6 +8,7 @@ from django.db.models import Q
 from .forms import StudentForm, ProgramForm, RegisterForm
 from .models import Program, CustomUser
 
+
 # Create your views here.
 def index (request):
   if request.method == "POST":
@@ -46,7 +47,7 @@ def logout_user(request):
 
 @login_required( login_url='index')
 def student(request):
-  users = CustomUser.objects.filter(Q(is_student=True) & Q(is_superuser=False))
+  users = CustomUser.objects.filter(Q(is_student=True) & Q(is_superuser=False)).order_by('first_name')
   print(users)
   context = {
     'users': users,
@@ -192,3 +193,18 @@ def dashboard(request):
     'paid': paid,
 	}
   return render(request, 'course/dashboard.html', context)
+
+def users(request):
+  users = CustomUser.objects.filter(Q(is_student=False))
+  context = {
+    'users': users,
+  }
+  return render(request, 'course/users.html', context)
+
+
+def user_details(request, id=None):
+  user = CustomUser.objects.get(id=id)
+  context = {
+    'user': user,
+  }
+  return render(request, 'course/user_details.html', context)

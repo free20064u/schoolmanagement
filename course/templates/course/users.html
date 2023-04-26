@@ -1,0 +1,33 @@
+{% extends './base.html' %}
+
+{% block content %}
+<div class="dashboard container">
+  <section class="search-bar">
+    <form action="{% url 'search_student' %}" method="post" class="search">
+      <input type="text" name="name" id="" class="input search-input" placeholder="Enter student name">
+      <button type="submit" class="btn search-btn"><i class="fa-solid fa-search"></i></button>
+    </form>
+  </section>
+  <section class="info">
+    <p class="info-head">
+      <span class="info-detail">Firstname</span>
+      <span class="info-detail">Lastname</span>
+      <span class="info-detail">Username</span>
+      <span class="info-detail">Email</span>
+    </p>
+
+    {% for user in users %}
+    <a href="{% url 'user_details' user.id %}">
+      <p class="info-body">
+        <span class="info-detail">{{ user.first_name }}</span>
+        <span class="info-detail">{{user.last_name}}</span>
+        <span class="info-detail">{{ user.indexNo }}</span>
+        <span class="info-detail">{{user.email }}</span>
+      </p>
+    </a>
+    {% endfor %}
+  </section>
+</div>
+
+
+{% endblock content %}
