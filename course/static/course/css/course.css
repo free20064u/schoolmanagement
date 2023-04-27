@@ -273,3 +273,8 @@ header {
 #image-clear_id {
   display: none;
 }
+
+.welcome {
+  display: flex;
+  align-items: center;
+}

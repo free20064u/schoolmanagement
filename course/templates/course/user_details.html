@@ -13,14 +13,14 @@
       <p><span class="info-label">Username:</span><span class="info-value">{{ user.username }}</span></p>
     </div>
     <div>
-      <p><span class="info-label">Course: </span><span class="info-value">{{ user.program }}</span></p>
-      <p><span class="info-label">Course: </span><span class="info-value">{{ user.program }}</span></p>
+      <p><span class="info-label">Is superuser: </span><span class="info-value">{{ user.is_superuser }}</span></p>
+      <p><span class="info-label">Is staff: </span><span class="info-value">{{ user.is_staff }}</span></p>
       <p><span class="info-label">Email: </span><span class="info-value">{{ user.email }}</span></p>
     </div>
     <div>
-      <p><span class="info-label">Fees: </span><span class="info-value">{{ user.program.fees }}</span></p>
-      <p><span class="info-label">Paid:</span><span class="info-value">{{ user.paid }}</span></p>
-      <p><span class="info-label">Balance: </span><span class="info-value">{{ user }}</span></p>
+      <p><span class="info-label">Active: </span><span class="info-value">{{ user.is_active }}</span></p>
+      <p><span class="info-label">Date joined:</span><span class="info-value">{{ user.date_joined }}</span></p>
+      <p><span class="info-label">Last login: </span><span class="info-value">{{ user.last_login }}</span></p>
     </div>
     <div class="student-btn">
       <a href="{% url 'users' %}"><button class="btn btn-detail">edit</button></a>
